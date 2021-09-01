@@ -8,15 +8,15 @@ void print_times_table(int n)
 	    for(j = 0; j <= n; j++)
 	    {
 	    
-	    for(i = 0; i <= n;i++)
+	    for(i = 0; i <= n; i++)
 	    {
 	        int x = j * i;
 	        
-	        _putchar("%d",x);
-	        _putchar(",");
+	        _putchar(x);
+	        _putchar(',');
 	    }
 	    
-	    _putchar("\n");
+	    _putchar('\n');
 	    
 	    }
 	}
