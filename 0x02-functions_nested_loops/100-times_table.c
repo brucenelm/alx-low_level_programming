@@ -1,3 +1,5 @@
+#include "main.h"
+
 void print_times_table(int n)
 {
 	if (n >= 0 && n <= 15)
@@ -9,11 +11,11 @@ void print_times_table(int n)
 	    {
 	        int x = j * i;
 	        
-	        printf("%d",x);
-	        printf(",");
+	        _putchar("%d",x);
+	        _putchar(",");
 	    }
 	    
-	    printf("\n");
+	    _putchar("\n");
 	    
 	    }
 	}
