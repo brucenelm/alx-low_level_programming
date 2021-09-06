@@ -1,18 +1,38 @@
 #include "main.h"
 /**
- * _puts - prints a string, followed by a new line,
- * @str: pointer to the string to print
- * Return: void
-*/
-
-
-void _puts(char *str)
+ * _strlen - returns the length of a string
+ * @s: string s
+ * Return: length of string
+ */
+int _strlen(char *s)
 {
-int i = 0;
-while (str[i])
+
+	int length = 0;
+
+	while (*s)
 {
-	_putchar(str[i]);
-	i++;
+		s++;
+		length++;
 }
-_putchar('\n');
+	return (length);
+}
+
+/**
+ * rev_string - reverses a string
+ * @s: string s
+ */
+void rev_string(char *s)
+{
+	int length = _strlen(s);
+	int counter = 0;
+	char tmp;
+
+	while (counter < length / 2)
+	{
+		tmp = *(s + counter);
+		*(s + counter) = *(s + length - 1 - counter);
+		*(s + length - 1 - counter) = tmp;
+		counter++;
+	}
+
 }
