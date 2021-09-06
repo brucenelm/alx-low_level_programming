@@ -1,7 +1,9 @@
+#include "main.h`"
 /*
- *@*n is the pointer to be updated
+ *reset_to_98 takes in a int pointer and returns void
  *
- *Returns void
+ *@n: pointer
+ *
  */
 void reset_to_98(int *n)
 {
