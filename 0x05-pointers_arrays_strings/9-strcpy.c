@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpy: - print array
+ * print_array - print array
  * @dest: character pointer
  * @src: character source
  *
