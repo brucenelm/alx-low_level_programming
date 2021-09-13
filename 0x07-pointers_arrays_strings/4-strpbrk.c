@@ -1,56 +1,22 @@
 #include "main.h"
-#include <stdlib.h>
-
-#define true 1
-#define false 0
-#define bool int
+#include <stdio.h>
 
 /**
- * _strstr - locates a substring
- * @haystack: string to be searched
- * @needle: substring to be found
- * Return: pointer to substring or NULL if not found
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: string to be searched
+ * @accept: bytes to be accepted
+ * Return: pointer to be the byte that matches accept or NULL if not found
  */
-char *_strstr(char *haystack, char *needle)
+char *_strpbrk(char *s, char *accept)
 {
-	char *start = haystack;
-	char *_needle = needle;
-	bool found =  false;
+	int i;
 
-	if (!*_needle)
-		return (haystack);
-
-	while (*haystack)
+	while (*s)
 	{
-		if (*haystack == *needle)
-		{
-			found = true;
-			start = haystack;
-			while (*_needle)
-			{
-				if (*haystack != *_needle)
-				{
-					found = false;
-					_needle = needle;
-					break;
-				}
-
-				haystack++;
-				_needle++;
-			}
-		}
-
-		if (found)
-		{
-			break;
-		}
-
-		haystack++;
+		for (i = 0; accept[i]; i++)
+			if (*s == accept[i])
+				return (s);
+		s++;
 	}
-	if (found)
-	{
-		return (start);
-	}
-
 	return (NULL);
 }
