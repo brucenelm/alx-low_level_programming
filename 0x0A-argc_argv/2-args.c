@@ -1,23 +1,21 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * main - multiplies two arguments and prints result
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 if no errors
+ * main - prints the number of arguments passed into the program
+ * @argc: int
+ * @argv: list
+ * Return: 0
  */
-int main(int argc, char *argv[])
-{
-	int first, second;
 
-	if (argc == 3)
-	{
-		first = atoi(argv[1]);
-		second = atoi(argv[2]);
-		printf("%i\n", first * second);
-		return (0);
-	}
-	printf("Error\n");
-	return (1);
+int main(int argc, char const *argv[])
+{
+int i = 0;
+
+while (argc--)
+{
+	printf("%s\n", argv[i]);
+	i++;
+}
+
+return (0);
 }
