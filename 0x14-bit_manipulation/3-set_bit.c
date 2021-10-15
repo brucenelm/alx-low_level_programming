@@ -1,46 +1,39 @@
-#include <stdio.h>
+#include "holberton.h"
+
 /**
- * print_binary - prints decimal as binary
- * @n: long integer
+ * powX- powers a number b to the p's power
+ * @b: base
+ * @p: power
+ * Return: return b to the power of a
  */
-
-void print_binary(unsigned long int n)
+unsigned long int powX(int b, int p)
 {
-	signed long int size;
-	char c;
-	int flag;
+	unsigned long int ans = 1;
 
-	size = sizeof(n) * 8 - 1;
-
-	if (n == 0)
+	while (p)
 	{
-		printf("0");
-		return;
+		ans *= b;
+		p--;
 	}
+	return (ans);
+}
 
-	if (n == 1)
-	{
-		printf("1");
-		return;
-	}
+/**
+ * set_bit - prints the binary representation of a number
+ * @n: input integer
+ * @index: returns the value of a bit at a given index
+ * Return: 1 for ssucess -1 for failure
+ */
+int set_bit(unsigned long int *n, unsigned int index)
+{
+	unsigned long int test;
 
-	flag = 0;
+	if (index > sizeof(n) * BIT_SIZE - 1)
+		return (-1);
 
-	while (size >= 0)
-	{
-		c = (n >> size) & 1;
 
-		if (flag == 1)
-			putchar(c + '0');
-		else
-		{
-			if (c == 1)
-			{
-				putchar(c + '0');
-				flag = 1;
-			}
-		}
+	test = powX(2, index);
+	*n = *n | test;
+	return (1);
 
-		size -= 1;
-	}
 }
